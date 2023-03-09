@@ -2,3 +2,138 @@ body {
     background-color: #192f5e;
     font-family: sans-serif;
 }
+
+.inner-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #fff;
+    padding: 2rem 0;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+svg {
+    fill: #3f3f3f;
+}
+
+.menu a {
+    color: #3f3f3f;
+    text-decoration: none;
+    display: block;
+}
+
+.menu a:hover,
+.menu a:active {
+    background-color: gainsboro;
+    border-radius: 4px;
+}
+
+.menu li {
+    line-height: 40px;
+    text-align: center;
+    align-items: center;
+}
+
+header nav {
+    /* absolute to the viewport */
+
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    max-height: 0;
+    top: 110px;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+}
+
+.show-nav {
+    max-height: 225px;
+}
+
+section p {
+    font-size: 1.75rem;
+    color: #d5e294;
+    border-bottom: 0.125rem solid #d5e294;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 3.125rem;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.gallery {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+section span {
+    background-color: #5da1ab;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    /* position the span over the image by taking it out of the document flow  */
+    position: absolute;
+    top: -20px;
+    right: -10px;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+@media screen and (min-width: 700px) {
+    .inner-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .toggle-btn {
+        display: none;
+    }
+
+    header nav {
+        max-height: 200px;
+        overflow: visible;
+        position: static;
+        width: unset;
+    }
+
+    ul.menu {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .menu a {
+        padding: 0 0 0.75rem;
+    }
+
+    .gallery {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+}
